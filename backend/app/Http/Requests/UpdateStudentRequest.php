@@ -11,7 +11,7 @@ class UpdateStudentRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,7 @@ class UpdateStudentRequest extends FormRequest
     {
         return [
             'name' => 'sometimes|required|string|max:255',
-            'email' => 'sometimes|required|email|unique:students,email,' . $this->student->id,
+            'email' => 'sometimes|required|email|unique:student,email,' .  $this->route('id'),
             'birth_date' => [
                 'sometimes',
                 'required',

@@ -23,7 +23,7 @@ class StoreStudentRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:150',
-            'email' => 'required|email|unique:students,email|max:100',
+            'email' => 'required|email|unique:student,email|max:100',
             'birth_date' => [
                 'required',
                 'date',
@@ -31,6 +31,7 @@ class StoreStudentRequest extends FormRequest
                 'after_or_equal:1900-01-01'
             ],
             'enable' => 'boolean',
+            'school_class_id' => 'required|exists:school_class,id',
         ];
     }
 }
