@@ -34,68 +34,40 @@ Content-Type: application/json
 # SchoolClass | delete
 DELETE http://127.0.0.1:8000/api/classes/1
 
+
 ###################
 
+
 ###
-# Students | INDEX
+# Students | index
 GET http://127.0.0.1:8000/api/students
 
 ###
-# Student | Create
+# Student | store
 POST http://127.0.0.1:8000/api/students
 Content-Type: application/json 
 
 {
-    "name": "João da Silva",
-    "email": "joao.silva@example.com",
-    "birth_date": "2000-05-15",
-    "enable": true
+    "name": "Pedro Paulo",
+    "email": "pedro.paulo@example.com",
+    "birth_date": "2002-04-17",
+    "enable": true,
+    "school_class_id": 3
 }
 
+###
+# Student | show
+GET http://127.0.0.1:8000/api/students/1
 
 ###
-# SchoolClass | show
-GET http://127.0.0.1:8000/api/students/{id}
-
-###
-# SchoolClass | update
-PATCH http://127.0.0.1:8000/api/students/{id}
+# Student | update
+PATCH http://127.0.0.1:8000/api/students/1
 Content-Type: application/json 
 
 {
-    "name": "Turma A",
-    "year": 2025,
-    "school_term": "matutino",
-    "enable": true
+    "name": "João Pereira",
 }
 
 ###
-# SchoolClass | delete
-DELETE http://127.0.0.1:8000/api/students/{id}
-
-############
-
-
-###
-# PHONENUMBER
-POST http://localhost:3001/groups/upload
-Content-Type: multipart/form-data
-
-{
-    "groupId": 1
-}
-
-###
-# UPDATE
-PATCH http://localhost:3001/auth-users/2
-Content-Type: application/json 
-
-{
-    "email"    : "pedro123@gmail.com",
-    "name"     : "pedro new pass",
-    "password" : "123p"
-}
-
-###
-# DELETE
-DELETE http://localhost:3001/auth-users/4
+# Student | delete
+DELETE http://127.0.0.1:8000/api/students/1
