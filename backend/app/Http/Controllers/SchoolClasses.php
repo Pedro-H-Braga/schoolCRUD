@@ -26,6 +26,7 @@ class SchoolClasses extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * @param StoreSchoolClassRequest
      * @return JsonResponse
      */
     public function store(StoreSchoolClassRequest $request): JsonResponse

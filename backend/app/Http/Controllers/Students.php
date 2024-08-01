@@ -26,7 +26,7 @@ class Students extends Controller
 
     /**
      * Store a newly created resource in storage.
-     * 
+     * @param StoreStudentRequest
      * @return JsonResponse
      */
     public function store(StoreStudentRequest $request): JsonResponse
@@ -72,17 +72,18 @@ class Students extends Controller
     /**
      * Update the specified resource in storage.
      * @param UpdateStudentRequest $request
-     * @param int $schoolClass
+     * @param int $student
      * @return JsonResponse 
      */
     public function update(UpdateStudentRequest $request, int $id): JsonResponse
     {
         $validated = $request->validated();
-
+        
+        info('no método update: '. $id);
         Bus::dispatchNow(new UpdateStudent($id, $validated));
     
         return response()->json([
-            'message' => 'Turma atualizada com sucesso!',
+            'message' => 'Aluno atualizado com sucesso!',
             'code' => 201,
         ], 201);
     }
@@ -97,7 +98,7 @@ class Students extends Controller
 
         if (!$student) {
             return response()->json([
-                'message' => 'Turma nao encontrada!',
+                'message' => 'Aluno nao encontrado!',
                 'code' => 404,
             ], 404);
         }
