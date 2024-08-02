@@ -1,0 +1,73 @@
+###
+# SchoolClass | index
+GET http://127.0.0.1:8000/api/classes
+
+###
+# SchoolClass | create
+POST http://127.0.0.1:8000/api/classes
+Content-Type: application/json 
+
+{
+    "name": "Turma C",
+    "year": 2021,
+    "school_term": "noturno",
+    "enable": false
+}
+
+###
+# SchoolClass | show
+GET http://127.0.0.1:8000/api/classes/1
+
+###
+# SchoolClass | update
+PATCH http://127.0.0.1:8000/api/classes/1
+Content-Type: application/json 
+
+{
+    "name": "Turma A",
+    "year": 2020,
+    "school_term": "matutino",
+    "enable": true
+}
+
+###
+# SchoolClass | delete
+DELETE http://127.0.0.1:8000/api/classes/1
+
+
+###################
+
+
+###
+# Students | index
+GET http://127.0.0.1:8000/api/students
+
+###
+# Student | store
+POST http://127.0.0.1:8000/api/students
+Content-Type: application/json 
+
+{
+    "name": "Pedro Paulo",
+    "email": "pedro.paulo@example.com",
+    "birth_date": "2002-04-17",
+    "enable": true,
+    "school_class_id": 3
+}
+
+###
+# Student | show
+GET http://127.0.0.1:8000/api/students/1
+
+###
+# Student | update
+PATCH http://127.0.0.1:8000/api/students/1
+Content-Type: application/json 
+
+{
+    "name": "João Pereira",
+}
+
+###
+# Student | delete
+DELETE http://127.0.0.1:8000/api/students/1
