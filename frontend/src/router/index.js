@@ -1,22 +1,51 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+
+    /**
+     * Students Route
+     */
     {
-      path: '/',
-      name: 'home',
-      component: HomeView
+      path: '/students',
+      name: 'StudentsIndex',
+      component: () => import('../views/students/StudentsIndex.vue')
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/HomeView.vue')
-    }
+      path: '/students/create',
+      name: 'StudentsCreate',
+      component: () => import('../views/students/StudentsCreate.vue')
+    },
+    {
+      path: '/students/edit/:id',
+      name: 'StudentsEdit',
+      component: () => import('../views/students/StudentsEdit.vue')
+    },
+
+    /**
+     * Classes Route
+     */
+    {
+      path: '/',
+      name: 'ClassesIndex',
+      component: () => import('../views/classes/ClassesIndex.vue')
+    },
+    {
+      path: '/classes/create',
+      name: 'ClassesCreate',
+      component: () => import('../views/classes/ClassesCreate.vue')
+    },
+    {
+      path: '/classes/edit/:id',
+      name: 'ClassesEdit',
+      component: () => import('../views/classes/ClassesEdit.vue')
+    },
+    {
+      path: '/classes/show/:id',
+      name: 'ClassesShow',
+      component: () => import('../views/classes/ClassesShow.vue')
+    },
   ]
 })
 
