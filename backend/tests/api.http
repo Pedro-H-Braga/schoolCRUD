@@ -3,6 +3,10 @@
 GET http://127.0.0.1:8000/api/classes
 
 ###
+# ClassStudent | studentClass
+GET http://127.0.0.1:8000/api/classes/students/2
+
+###
 # SchoolClass | create
 POST http://127.0.0.1:8000/api/classes
 Content-Type: application/json 
