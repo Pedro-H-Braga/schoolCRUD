@@ -19,7 +19,7 @@ class Students extends Controller
      */
     public function index(): JsonResponse
     {
-        $student = Student::all();
+        $student = Student::with('schoolClasses')->get();
 
         return response()->json($student);
     }
