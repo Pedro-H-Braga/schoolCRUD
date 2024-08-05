@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Jobs\SchoolClass\CreateClass;
 use App\Jobs\SchoolClass\UpdateClass;
 use App\Models\SchoolClass;
+use App\Models\Student;
 use App\Http\Requests\StoreSchoolClassRequest;
 use App\Http\Requests\UpdateSchoolClassRequest;
 use Illuminate\Http\JsonResponse;
@@ -23,6 +24,17 @@ class SchoolClasses extends Controller
         return response()->json($class);
     }
 
+    /**
+     * Pegar os alunos atrelados a turma selecionada
+     * @param int $id_turma
+     * @return JsonResponse
+     */
+    public function studentsClass(int $id): JsonResponse 
+    {
+        $students = Student::where('school_class_id', $id)->get();
+
+        return response()->json($students);
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -67,7 +79,6 @@ class SchoolClasses extends Controller
 
         return response()->json($class);
     }
-
 
     /**
      * Update the specified resource in storage.
