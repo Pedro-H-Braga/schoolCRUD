@@ -20,6 +20,7 @@ const router = createRouter({
     {
       path: '/students/edit/:id',
       name: 'StudentsEdit',
+      props: true,
       component: () => import('../views/students/StudentsEdit.vue')
     },
 
@@ -39,7 +40,8 @@ const router = createRouter({
     {
       path: '/classes/edit/:id',
       name: 'ClassesEdit',
-      component: () => import('../views/classes/ClassesEdit.vue')
+      component: () => import('../views/classes/ClassesEdit.vue'),
+      props: true,
     },
     {
       path: '/classes/show/:id',
