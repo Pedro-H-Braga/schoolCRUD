@@ -79,7 +79,6 @@ class Students extends Controller
     {
         $validated = $request->validated();
         
-        info('no método update: '. $id);
         Bus::dispatchNow(new UpdateStudent($id, $validated));
     
         return response()->json([
