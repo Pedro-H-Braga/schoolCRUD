@@ -23,7 +23,6 @@ class UpdateStudentRequest extends FormRequest
     {
         return [
             'name' => 'sometimes|required|string|max:255',
-            'email' => 'sometimes|required|email|unique:student,email,' .  $this->route('id'),
             'birth_date' => [
                 'sometimes',
                 'required',
@@ -32,7 +31,7 @@ class UpdateStudentRequest extends FormRequest
                 'after_or_equal:1900-01-01'
             ],
             'enable' => 'sometimes|required|boolean',
-            'school_class_id' => 'sometimes|required|exists:school_classes,id',
+            'school_class_id' => 'sometimes|required|exists:school_class,id',
         ];
     }
 }
