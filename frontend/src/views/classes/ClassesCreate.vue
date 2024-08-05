@@ -20,7 +20,6 @@ const submitForm = async () => {
     try {
         await storeClass(form);
     } catch (error) {
-        // Erro: manipule o erro aqui, como mostrar uma mensagem de erro.
         errorMsg.value = 'Erro ao enviar o formulário. Tente novamente.';
         console.error("Erro ao enviar o formulário:", error);
     } finally {
