@@ -17,9 +17,5 @@ use App\Http\Controllers\Students;
 
 Route::apiResource('students', Students::class);
 Route::apiResource('classes', SchoolClasses::class); 
-/**
- * Para listar os alunos de uma turma:
- */
-// Route::prefix('students/{studentId}')->group(function () {
-//     Route::get('school-classes', [Students::class, 'schoolClasses']);
-// });
+Route::get('classes/students/{id}', [SchoolClasses::class, 'studentsClass']);
+
