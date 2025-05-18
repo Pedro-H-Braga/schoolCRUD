@@ -44,7 +44,3 @@ Este repositório contém um desafio de um CRUD básico utilizando Laravel no ba
 - Node.js 14+
 - Laravel 8+
 - Vue.js 3+
-
-## Entrega do Porjeto
-
-### Ao finalizar o projeto, você deverá nos enviar o seu Nome completo, número de Whatsapp e link do repositório para o E-mail: marlonmaia.dev@gmail.com
